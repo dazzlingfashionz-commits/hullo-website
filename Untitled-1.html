@@ -1,0 +1,196 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PAIИ✘</title>
+    <style>
+    /* Neon White + Black Theme with Sparkles */
+    :root {
+     --bg-color: #000;
+     --text-color: #fff;
+     --neon-white: #fff;
+     --neon-white-dim: #ccc;
+     --shadow-white: rgba(255,255,255,0.7);
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { background:var(--bg-color); color:var(--text-color); font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; min-height:100vh; overflow-x:hidden; position:relative; }
+    .container { max-width:1200px; margin:0 auto; padding:20px; display:flex; flex-direction:column; }
+    h1 { text-align:center; font-size:3.5rem; font-weight:900; margin-bottom:15px; color:var(--neon-white); text-shadow:0 0 5px var(--neon-white),0 0 10px var(--neon-white),0 0 20px var(--neon-white),0 0 40px #aaa; animation:neonTextFlow 3s infinite; }
+    @keyframes neonTextFlow { 0% { text-shadow:0 0 5px #fff; } 50% { text-shadow:0 0 30px #fff,0 0 60px #bbb; } 100% { text-shadow:0 0 5px #fff; } }
+    .service-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:16px; margin-top:25px; }
+    .service-card { background:#0d0d0d; border:2px solid var(--neon-white); border-radius:12px; padding:20px; cursor:pointer; text-align:center; transition:all 0.3s ease; animation: neonPulse 4s infinite; }
+    .service-card:hover { background:#1a1a1a; transform:translateY(-4px) rotateX(6deg) rotateY(-6deg); box-shadow:0 0 15px var(--neon-white),0 0 30px #ccc; }
+    .service-card span { display:block; margin-top:8px; color:var(--neon-white-dim); font-size:14px; }
+    @keyframes neonPulse { 0% { box-shadow:0 0 5px var(--neon-white); } 50% { box-shadow:0 0 20px var(--neon-white),0 0 40px #ccc; } 100% { box-shadow:0 0 5px var(--neon-white); } }
+    #appPanel { display:none; margin-top:25px; background:#111; border:1px solid #222; border-radius:16px; padding:20px; }
+    .header { display:flex; justify-content:space-between; align-items:center; }
+    .back-btn { background:none; border:2px solid var(--neon-white); color:var(--neon-white); padding:10px 20px; border-radius:8px; cursor:pointer; transition:all 0.3s ease; }
+    .back-btn:hover { background:var(--neon-white); color:#000; box-shadow:0 0 15px var(--neon-white); transform:translateX(-3px); }
+    .tabs { display:flex; gap:10px; margin-top:15px; }
+    .tab { flex:1; padding:10px; background:#000; border:1px solid #222; color:var(--neon-white-dim); border-radius:10px; cursor:pointer; }
+    .tab.active { color:#000; background:var(--neon-white); box-shadow:0 0 15px var(--neon-white); }
+    .form { margin-top:15px; }
+    label { font-size:12px; color:var(--neon-white-dim); }
+    input,select { width:100%; padding:11px; margin-top:6px; background:#000; border:1px solid #222; border-radius:10px; color:var(--neon-white); }
+    input:focus,select:focus { outline:none; border-color:var(--neon-white); box-shadow:0 0 15px var(--neon-white); }
+    .action-btn { width:100%; margin-top:15px; padding:12px; border:none; border-radius:12px; background:var(--neon-white); color:#000; font-weight:700; cursor:pointer; box-shadow:0 0 15px var(--neon-white); }
+    #result { display:none; margin-top:15px; background:#000; border:1px solid #222; padding:12px; border-radius:10px; word-break:break-all; }
+    .copy { margin-top:10px; width:100%; padding:10px; border:1px solid var(--neon-white); border-radius:12px; background:none; color:var(--neon-white); cursor:pointer; }
+    .note { text-align:center; margin-top:20px; font-size:13px; color:var(--neon-white-dim); }
+    .discord-btn { display:flex; align-items:center; justify-content:center; gap:8px; background:#7289da; border:none; padding:12px; border-radius:12px; color:#fff; cursor:pointer; font-weight:700; margin-top:20px; }
+    .discord-btn img { width:20px; height:20px; }
+    .sparkle { position:fixed; top:0; left:0; width:2px; height:2px; background:white; border-radius:50%; box-shadow:0 0 8px white; pointer-events:none; animation: drift 10s linear infinite, glow 2s ease-in-out infinite alternate; opacity:0.8; }
+    @keyframes drift { 0%{transform:translateY(0) translateX(0);} 100%{transform:translateY(100vh) translateX(50px);} }
+    @keyframes glow { 0%{opacity:0.3;} 100%{opacity:1;} }
+    </style>
+    </head>
+    <body>
+    <div class="container">
+    <h1>HULLO</h1>
+    <div id="serviceGrid" class="service-grid"><div class="service-card"><h3>is.gd</h3><span>Fast and reliable shortening service</span></div><div class="service-card"><h3>v.gd</h3><span>Sister service to is.gd</span></div><div class="service-card"><h3>tinyurl.com</h3><span>Classic URL shortening platform</span></div><div class="service-card"><h3>bitly</h3><span>Advanced analytics and tracking</span></div><div class="service-card"><h3>rebrand.ly</h3><span>Custom branded short links</span></div><div class="service-card"><h3>cutt.ly</h3><span>Modern shortening with statistics</span></div></div>
+    <div id="appPanel">
+     <div class="header">
+      <button class="back-btn" onclick="goBack()">← Back</button>
+      <strong id="currentService"></strong>
+     </div>
+     <div class="tabs">
+      <button class="tab active" onclick="switchTab('shorten')">Shorten</button>
+      <button class="tab" onclick="switchTab('unshorten')">Unshorten</button>
+     </div>
+     <div id="shortenTab" class="form">
+      <label>URL to shorten</label>
+      <input id="urlInput" placeholder="https://example.com">
+      <label>Link type</label>
+      <select id="linkType">
+        <option value="default">Default</option>
+        <option value="profile">Profile</option>
+        <option value="group">Group</option>
+        <option value="private-server">Private Server</option>
+      </select>
+      <label style="margin-top:10px">Custom slug (optional)</label>
+      <input id="customSlug" placeholder="my-link">
+      <button class="action-btn" onclick="shorten()">Generate</button>
+     </div>
+     <div id="unshortenTab" class="form" style="display:none">
+      <label>Shortened URL</label>
+      <input id="shortUrlInput" placeholder="https://is.gd/...">
+      <button class="action-btn" onclick="unshorten()">Reveal</button>
+     </div>
+     <div id="result"></div>
+     <button class="copy" onclick="copyResult()">Copy</button>
+     <button class="discord-btn" onclick="window.open('https://discord.gg/jNGzqJAD')">
+       <img src="images/Discord_logo.svg" alt="Discord Logo"> Join Discord
+     </button>
+    </div>
+    <p class="note">PAIИ✘ • Black & White Glow • Universal URL Shortener</p>
+    </div>
+    <script>
+    const services=[
+      {name:'is.gd', desc:'Fast and reliable shortening service'},
+      {name:'v.gd', desc:'Sister service to is.gd'},
+      {name:'tinyurl.com', desc:'Classic URL shortening platform'},
+      {name:'bitly', desc:'Advanced analytics and tracking'},
+      {name:'rebrand.ly', desc:'Custom branded short links'},
+      {name:'cutt.ly', desc:'Modern shortening with statistics'},
+      {name:'click.ly', desc:'Simple and efficient link management'},
+      {name:'tiny.cc', desc:'Quick and easy URL shortening'},
+      {name:'shorter.me', desc:'Minimalist shortening service'},
+      {name:'shorter.gg', desc:'Gaming-focused URL shortener'},
+      {name:'spoo.me', desc:'Privacy-focused link shortening'},
+      {name:'shorturl.asia', desc:'Asian region optimized service'},
+      {name:'reurl.cc', desc:'Reliable URL redirection service'},
+      {name:'href.li', desc:'Developer-friendly shortening API'},
+      {name:'hyperhost', desc:'High-performance link management'},
+      {name:'l8.nu', desc:'Compact and fast URL service'},
+      {name:'rb.gy', desc:'Modern shortening platform'},
+      {name:'t2m.io', desc:'Tech-focused URL shortening'},
+      {name:'clck.ru', desc:'Russian-based shortening service'},
+      {name:'short.io', desc:'Enterprise URL shortening solution'},
+      {name:'kurze.links', desc:'German-based shortening service'}
+    ];
+    
+    const grid=document.getElementById('serviceGrid');
+    services.forEach((s,i)=>{
+      setTimeout(()=>{
+        const card=document.createElement('div');
+        card.className='service-card';
+        card.innerHTML=`<h3>${s.name}</h3><span>${s.desc}</span>`;
+        card.addEventListener('click',()=>{ openService(s.name); });
+        grid.appendChild(card);
+      },i*100);
+    });
+    
+    const appPanel=document.getElementById('appPanel');
+    const serviceGrid=document.getElementById('serviceGrid');
+    const currentService=document.getElementById('currentService');
+    const shortenTab=document.getElementById('shortenTab');
+    const unshortenTab=document.getElementById('unshortenTab');
+    const urlInput=document.getElementById('urlInput');
+    const customSlug=document.getElementById('customSlug');
+    const shortUrlInput=document.getElementById('shortUrlInput');
+    const linkType=document.getElementById('linkType');
+    const result=document.getElementById('result');
+    
+    function openService(serviceName){ currentService.textContent=serviceName; serviceGrid.style.display='none'; appPanel.style.display='block'; shortenTab.style.display='block'; unshortenTab.style.display='none'; }
+    function goBack(){ appPanel.style.display='none'; serviceGrid.style.display='grid'; }
+    function switchTab(tab){ if(tab==='shorten'){ shortenTab.style.display='block'; unshortenTab.style.display='none'; } else { shortenTab.style.display='none'; unshortenTab.style.display='block'; } }
+    
+    async function shorten(){
+     if(!urlInput.value){ alert('Enter a URL'); return; }
+     result.style.display='block'; result.textContent='Generating…';
+     try{
+      const option=linkType.value;
+      const originalUrl=urlInput.value;
+      const serviceName=currentService.textContent;
+      let shortenedUrl;
+      if(serviceName==='is.gd'||serviceName==='v.gd'){
+        const apiUrl=`https://${serviceName}/create.php?format=json&url=${encodeURIComponent(originalUrl)}${customSlug.value?`&shorturl=${customSlug.value}`:''}`;
+        const response=await fetch(apiUrl);
+        const data=await response.json();
+        if(!response.ok||!data.shorturl) throw new Error(data.errormessage||'Shortening service unavailable');
+        shortenedUrl=data.shorturl;
+      } else {
+        const slug=customSlug.value||Math.random().toString(36).substr(2,6);
+        shortenedUrl=`https://${serviceName.toLowerCase()}/${slug}`;
+      }
+    
+      let displayUrl;
+      const userId=originalUrl.match(/users\/(\d+)/)?.[1]||'ID';
+      const groupId=originalUrl.match(/(communities|groups)\/(\d+)/)?.[2]||'ID';
+      const serverCode=originalUrl.match(/code=([a-f0-9]+)/i)?.[1]||'abc123';
+    
+      switch(option){
+        case 'profile': displayUrl=`https*:*//www.roblox.com/users/${userId}/profile`; break;
+        case 'group': displayUrl=`https*:*//www.roblox.com/groups/${groupId}`; break;
+        case 'private-server': displayUrl=`https*:*//www.roblox.com/share?code=${serverCode}&type=Server`; break;
+        default: displayUrl=originalUrl.replace('robiox.com.tg','roblox.com');
+      }
+    
+      result.textContent=`[${displayUrl}](${shortenedUrl})`;
+     } catch(error){ result.textContent=`Error: ${error.message||'Failed to create link. Try again.'}`; }
+    }
+    
+    async function unshorten(){
+     if(!shortUrlInput.value){ alert('Enter a shortened URL'); return; }
+     result.style.display='block'; result.textContent='Revealing original URL…';
+     try{
+      const url=shortUrlInput.value.trim();
+      const response=await fetch(url,{redirect:'follow'});
+      result.textContent=response.url||'Unshortening complete';
+     } catch(error){ result.textContent=`Error: ${error.message||'Failed to unshorten URL'}`; }
+    }
+    
+    function copyResult(){ if(!result.textContent) return; navigator.clipboard.writeText(result.textContent); }
+    
+    const sparkleCount=80;
+    for(let i=0;i<sparkleCount;i++){
+     const sparkle=document.createElement('div');
+     sparkle.className='sparkle';
+     sparkle.style.left=Math.random()*window.innerWidth+'px';
+     sparkle.style.top=Math.random()*window.innerHeight+'px';
+     sparkle.style.width=sparkle.style.height=(Math.random()*3+1)+'px';
+     sparkle.style.animationDuration=(Math.random()*8+5)+'s,'+(Math.random()*2+1)+'s';
+     document.body.appendChild(sparkle);
+    }
+    </script><div class="sparkle" style="left: 1884.44px; top: 223.335px; height: 3.14777px; width: 3.14777px; animation-duration: 5.96708s, 2.62708s;"></div><div class="sparkle" style="left: 207.997px; top: 684.361px; height: 2.38678px; width: 2.38678px; animation-duration: 7.16284s, 1.16855s;"></div><div class="sparkle" style="left: 130.93px; top: 484.1px; height: 3.81902px; width: 3.81902px; animation-duration: 9.40677s, 2.15431s;"></div><div class="sparkle" style="left: 678.625px; top: 269.056px; height: 2.4466px; width: 2.4466px; animation-duration: 10.558s, 2.39706s;"></div><div class="sparkle" style="left: 1094.63px; top: 155.838px; height: 3.59682px; width: 3.59682px; animation-duration: 11.5921s, 1.30997s;"></div><div class="sparkle" style="left: 205.212px; top: 671.796px; height: 1.32647px; width: 1.32647px; animation-duration: 12.1445s, 2.36192s;"></div><div class="sparkle" style="left: 170.913px; top: 593.895px; height: 2.74624px; width: 2.74624px; animation-duration: 6.20168s, 1.7792s;"></div><div class="sparkle" style="left: 945.922px; top: 581.587px; height: 3.9771px; width: 3.9771px; animation-duration: 6.05684s, 2.34638s;"></div><div class="sparkle" style="left: 363.577px; top: 347.523px; height: 1.65432px; width: 1.65432px; animation-duration: 8.14997s, 1.4663s;"></div><div class="sparkle" style="left: 708.53px; top: 200.397px; height: 3.37397px; width: 3.37397px; animation-duration: 11.7158s, 1.70441s;"></div><div class="sparkle" style="left: 1618.35px; top: 52.79px; height: 2.63128px; width: 2.63128px; animation-duration: 11.3938s, 1.37956s;"></div><div class="sparkle" style="left: 67.355px; top: 781.823px; height: 1.05955px; width: 1.05955px; animation-duration: 8.03698s, 1.83563s;"></div><div class="sparkle" style="left: 1783.11px; top: 663.21px; height: 2.48364px; width: 2.48364px; animation-duration: 11.1835s, 1.31182s;"></div><div class="sparkle" style="left: 1018.43px; top: 33.1653px; height: 3.29546px; width: 3.29546px; animation-duration: 7.53234s, 2.28371s;"></div><div class="sparkle" style="left: 1254.5px; top: 866.317px; height: 3.44375px; width: 3.44375px; animation-duration: 11.9291s, 1.20884s;"></div><div class="sparkle" style="left: 591.972px; top: 613.299px; height: 3.59051px; width: 3.59051px; animation-duration: 11.3833s, 1.10584s;"></div><div class="sparkle" style="left: 1285.66px; top: 282.125px; height: 1.18705px; width: 1.18705px; animation-duration: 11.7345s, 1.87335s;"></div><div class="sparkle" style="left: 561.596px; top: 857.221px; height: 1.66668px; width: 1.66668px; animation-duration: 12.9699s, 1.05419s;"></div><div class="sparkle" style="left: 1201.31px; top: 860.299px; height: 2.24395px; width: 2.24395px; animation-duration: 10.4503s, 1.44161s;"></div><div class="sparkle" style="left: 177.041px; top: 282.997px; height: 3.03871px; width: 3.03871px; animation-duration: 11.0447s, 1.41514s;"></div><div class="sparkle" style="left: 1306.6px; top: 810.315px; height: 2.23404px; width: 2.23404px; animation-duration: 9.55783s, 2.11213s;"></div><div class="sparkle" style="left: 340.337px; top: 415.878px; height: 2.90069px; width: 2.90069px; animation-duration: 6.24335s, 2.49865s;"></div><div class="sparkle" style="left: 257.583px; top: 316.419px; height: 1.08984px; width: 1.08984px; animation-duration: 12.692s, 2.27021s;"></div><div class="sparkle" style="left: 1263.34px; top: 303.598px; height: 2.98141px; width: 2.98141px; animation-duration: 8.0391s, 1.03054s;"></div><div class="sparkle" style="left: 1325.88px; top: 585.184px; height: 2.56688px; width: 2.56688px; animation-duration: 11.0013s, 1.07937s;"></div><div class="sparkle" style="left: 284.189px; top: 265.316px; height: 3.34162px; width: 3.34162px; animation-duration: 6.05654s, 1.88285s;"></div><div class="sparkle" style="left: 1423.68px; top: 15.9936px; height: 3.43097px; width: 3.43097px; animation-duration: 8.39451s, 1.63048s;"></div><div class="sparkle" style="left: 1784.06px; top: 528.453px; height: 3.23502px; width: 3.23502px; animation-duration: 5.94316s, 2.61173s;"></div><div class="sparkle" style="left: 1107.65px; top: 145.815px; height: 1.79689px; width: 1.79689px; animation-duration: 6.30463s, 2.77583s;"></div><div class="sparkle" style="left: 462.765px; top: 810.591px; height: 1.23341px; width: 1.23341px; animation-duration: 9.0881s, 1.83748s;"></div><div class="sparkle" style="left: 793.009px; top: 463.726px; height: 3.84199px; width: 3.84199px; animation-duration: 8.22104s, 2.97163s;"></div><div class="sparkle" style="left: 726.631px; top: 190.229px; height: 3.99406px; width: 3.99406px; animation-duration: 12.6187s, 1.86855s;"></div><div class="sparkle" style="left: 1553.5px; top: 195.645px; height: 1.51017px; width: 1.51017px; animation-duration: 11.0359s, 2.07499s;"></div><div class="sparkle" style="left: 1194.85px; top: 22.336px; height: 2.76399px; width: 2.76399px; animation-duration: 11.8547s, 2.52419s;"></div><div class="sparkle" style="left: 857.387px; top: 23.1942px; height: 2.74935px; width: 2.74935px; animation-duration: 5.85555s, 2.00053s;"></div><div class="sparkle" style="left: 461.876px; top: 801.782px; height: 1.30507px; width: 1.30507px; animation-duration: 10.2044s, 1.58904s;"></div><div class="sparkle" style="left: 545.95px; top: 845.397px; height: 3.74198px; width: 3.74198px; animation-duration: 12.819s, 1.93213s;"></div><div class="sparkle" style="left: 787.018px; top: 347.35px; height: 3.02379px; width: 3.02379px; animation-duration: 6.03804s, 1.9905s;"></div><div class="sparkle" style="left: 1746.4px; top: 259.368px; height: 3.01111px; width: 3.01111px; animation-duration: 12.6286s, 2.18188s;"></div><div class="sparkle" style="left: 137.993px; top: 171.479px; height: 1.06101px; width: 1.06101px; animation-duration: 5.23425s, 1.34879s;"></div><div class="sparkle" style="left: 1820.68px; top: 54.7994px; height: 3.73614px; width: 3.73614px; animation-duration: 8.26741s, 2.96076s;"></div><div class="sparkle" style="left: 393.194px; top: 702.057px; height: 1.82356px; width: 1.82356px; animation-duration: 11.2841s, 2.61227s;"></div><div class="sparkle" style="left: 787.396px; top: 110.748px; height: 1.33774px; width: 1.33774px; animation-duration: 8.20996s, 2.18206s;"></div><div class="sparkle" style="left: 1011.06px; top: 9.84222px; height: 3.78171px; width: 3.78171px; animation-duration: 6.4993s, 2.43091s;"></div><div class="sparkle" style="left: 1884.28px; top: 277.715px; height: 3.89682px; width: 3.89682px; animation-duration: 11.8814s, 2.00414s;"></div><div class="sparkle" style="left: 1277.24px; top: 584.592px; height: 1.35561px; width: 1.35561px; animation-duration: 5.1072s, 2.05846s;"></div><div class="sparkle" style="left: 1315.35px; top: 857.463px; height: 3.66135px; width: 3.66135px; animation-duration: 5.95499s, 2.86136s;"></div><div class="sparkle" style="left: 863.941px; top: 199.873px; height: 2.8558px; width: 2.8558px; animation-duration: 9.41097s, 2.12116s;"></div><div class="sparkle" style="left: 936.352px; top: 198.488px; height: 2.74273px; width: 2.74273px; animation-duration: 11.2506s, 1.23568s;"></div><div class="sparkle" style="left: 1258.42px; top: 679.079px; height: 3.38928px; width: 3.38928px; animation-duration: 6.77006s, 2.76242s;"></div><div class="sparkle" style="left: 1216.17px; top: 292.413px; height: 1.83072px; width: 1.83072px; animation-duration: 10.7766s, 1.55258s;"></div><div class="sparkle" style="left: 1874.36px; top: 838.4px; height: 3.21845px; width: 3.21845px; animation-duration: 8.16261s, 1.66588s;"></div><div class="sparkle" style="left: 1516.33px; top: 267.623px; height: 2.36359px; width: 2.36359px; animation-duration: 6.23634s, 1.46708s;"></div><div class="sparkle" style="left: 685.676px; top: 122.176px; height: 3.82216px; width: 3.82216px; animation-duration: 7.20541s, 2.15601s;"></div><div class="sparkle" style="left: 133.808px; top: 618.071px; height: 2.22128px; width: 2.22128px; animation-duration: 5.73658s, 2.55533s;"></div><div class="sparkle" style="left: 1893.84px; top: 430.16px; height: 2.5042px; width: 2.5042px; animation-duration: 7.39634s, 1.91834s;"></div><div class="sparkle" style="left: 101.311px; top: 493.346px; height: 3.71141px; width: 3.71141px; animation-duration: 7.09229s, 1.72617s;"></div><div class="sparkle" style="left: 161.148px; top: 731.225px; height: 3.68563px; width: 3.68563px; animation-duration: 10.7526s, 1.46346s;"></div><div class="sparkle" style="left: 175.209px; top: 193.81px; height: 2.93755px; width: 2.93755px; animation-duration: 6.30738s, 2.14612s;"></div><div class="sparkle" style="left: 162.63px; top: 286.365px; height: 3.70192px; width: 3.70192px; animation-duration: 10.4258s, 1.90006s;"></div><div class="sparkle" style="left: 1000.05px; top: 55.2015px; height: 1.53991px; width: 1.53991px; animation-duration: 9.01429s, 2.36817s;"></div><div class="sparkle" style="left: 1877.28px; top: 748.495px; height: 3.66856px; width: 3.66856px; animation-duration: 8.04852s, 1.64769s;"></div><div class="sparkle" style="left: 435.596px; top: 399.802px; height: 1.34244px; width: 1.34244px; animation-duration: 9.43249s, 2.01715s;"></div><div class="sparkle" style="left: 538.525px; top: 555.687px; height: 3.37508px; width: 3.37508px; animation-duration: 8.9155s, 2.23986s;"></div><div class="sparkle" style="left: 1009.46px; top: 504.856px; height: 1.32886px; width: 1.32886px; animation-duration: 12.6489s, 1.14756s;"></div><div class="sparkle" style="left: 1867.65px; top: 344.325px; height: 3.30184px; width: 3.30184px; animation-duration: 11.714s, 2.23117s;"></div><div class="sparkle" style="left: 739.532px; top: 662.942px; height: 3.62177px; width: 3.62177px; animation-duration: 8.81982s, 1.0984s;"></div><div class="sparkle" style="left: 817.222px; top: 783.041px; height: 3.52637px; width: 3.52637px; animation-duration: 8.03791s, 1.69331s;"></div><div class="sparkle" style="left: 994.712px; top: 19.3425px; height: 2.78653px; width: 2.78653px; animation-duration: 12.8919s, 2.98497s;"></div><div class="sparkle" style="left: 377.925px; top: 628.639px; height: 2.07713px; width: 2.07713px; animation-duration: 6.50138s, 2.90558s;"></div><div class="sparkle" style="left: 308.128px; top: 288.103px; height: 2.74877px; width: 2.74877px; animation-duration: 11.0229s, 2.25827s;"></div><div class="sparkle" style="left: 1275.62px; top: 24.5716px; height: 2.46437px; width: 2.46437px; animation-duration: 9.3636s, 2.05072s;"></div><div class="sparkle" style="left: 160.791px; top: 352.817px; height: 2.27924px; width: 2.27924px; animation-duration: 6.21593s, 2.26056s;"></div><div class="sparkle" style="left: 931.526px; top: 727.569px; height: 2.96838px; width: 2.96838px; animation-duration: 8.41947s, 1.1436s;"></div><div class="sparkle" style="left: 1748.12px; top: 377.154px; height: 2.93989px; width: 2.93989px; animation-duration: 11.4742s, 1.46958s;"></div><div class="sparkle" style="left: 1788.17px; top: 456.772px; height: 1.7645px; width: 1.7645px; animation-duration: 6.32441s, 2.48033s;"></div><div class="sparkle" style="left: 1566.24px; top: 554.911px; height: 1.02257px; width: 1.02257px; animation-duration: 11.6868s, 2.07176s;"></div><div class="sparkle" style="left: 239.045px; top: 566.775px; height: 3.66713px; width: 3.66713px; animation-duration: 8.97209s, 2.17014s;"></div><div class="sparkle" style="left: 1835.54px; top: 390.972px; height: 1.99919px; width: 1.99919px; animation-duration: 10.7423s, 2.29981s;"></div><div class="sparkle" style="left: 889.697px; top: 787.826px; height: 3.67151px; width: 3.67151px; animation-duration: 12.5877s, 2.94501s;"></div>
+    
+    </body></html>
